@@ -15,14 +15,25 @@
             padding: 0;
             font-family: "Poppins", sans-serif;
         }
-        canvas {
-    cursor: crosshair;
-    display: block;
-    position:absolute;
-    z-index:5;
-    top:0;
-    width:100% !important;
-}
+
+        #canvas1 {
+            cursor: crosshair;
+            display: block;
+            position: absolute;
+            z-index: -5;
+            top: 0;
+            width: 100% !important;
+        }
+
+        #canvas {
+            cursor: crosshair;
+            display: block;
+            position: absolute;
+            z-index: 5;
+            top: 0;
+            width: 100% !important;
+        }
+
         body {
             background: #000 no-repeat center center fixed;
             background-size: cover;
@@ -42,7 +53,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            box-shadow: 0 50px 50px rgba(0, 0, 0, 0.9), 0 0 0 100px rgba(0, 0, 0, 0.1);
         }
 
         .container h2 {
@@ -50,7 +60,7 @@
             font-size: 10em;
             font-weight: 600;
             line-height: 0.7em;
-            color: #f8f8f8;
+            color: #99ff20;
             margin-top: -80px;
         }
 
@@ -69,12 +79,12 @@
 
         .countdown div {
             position: relative;
-            width: 150px;
-            height: 150px;
-            line-height: 150px;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
             text-align: center;
-            background: #0f0f0f;
-            color: #bababa;
+            background: #21242b;
+            color: #fff;
             margin: 0 15px;
             font-size: 3em;
             font-weight: 500;
@@ -87,8 +97,8 @@
             left: 0;
             width: 100%;
             height: 50px;
-            background: #fff;
-            color: #333;
+            background: #99ff20;
+            color: #000;
             font-size: 0.50em;
             line-height: 50px;
             font-weight: 300;
@@ -114,11 +124,12 @@
 
 <body>
 
+    <canvas id="canvas1"></canvas>
     <canvas id="canvas"></canvas>
 
     <div class="container">
 
-        <h2><span>Countdown to New Year</span>2024</h2>
+        <h2>2024<span>NEW YEAR COUNTDOWN</span></h2>
 
         <div class="countdown">
             <div id="day">na</div>
@@ -129,8 +140,8 @@
 
     </div>
     <div>
-    
-</div>
+
+    </div>
     <script type="text/javascript" src="https://wpshare247.com/ajquery.lib/fireworks/script.js"> </script>
 
     <script>
@@ -172,7 +183,7 @@
         })();
 
         // now we will setup our basic variables for the demo
-        var canvas = document.getElementById('canvas'),
+        var canvas = document.getElementById('canvas1'),
             ctx = canvas.getContext('2d'),
             // full screen dimensions
             cw = window.innerWidth,
